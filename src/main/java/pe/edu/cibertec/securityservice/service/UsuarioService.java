@@ -42,13 +42,11 @@ public class UsuarioService {
         return UsuarioDTO.from(usuarioRepository.save(usuario));
     }
 
-    // "Mis compras": las órdenes viven en movement-service, se piden por Feign
     public List<OrdenResponse> getCompras(Integer id) {
         getUsuario(id);
         try {
             return movementClient.getOrdenesByUsuario(id);
         } catch (RetryableException e) {
-            // movement-service apagado o inalcanzable (no llegó a responder)
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "movement-service no disponible");
         }
     }

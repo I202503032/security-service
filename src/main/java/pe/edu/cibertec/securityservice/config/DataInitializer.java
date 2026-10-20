@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import pe.edu.cibertec.securityservice.model.Usuario;
 import pe.edu.cibertec.securityservice.repository.IUsuarioRepository;
 
-// Crea el ADMIN inicial: el registro público siempre crea usuarios USER
 @Slf4j
 @RequiredArgsConstructor
 @Component

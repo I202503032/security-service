@@ -25,19 +25,16 @@ public class AuthController {
     private final AuthService authService;
     private final UsuarioService usuarioService;
 
-    //localhost:8081/api/v1/auth/register
     @PostMapping("/register")
     public ResponseEntity<UsuarioDTO> register(@Valid @RequestBody RegisterRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(authService.register(request));
     }
 
-    //localhost:8081/api/v1/auth/login
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
         return ResponseEntity.ok(authService.login(request));
     }
 
-    //localhost:8081/api/v1/auth/me
     @GetMapping("/me")
     public ResponseEntity<UsuarioDTO> me(@AuthenticationPrincipal Jwt jwt) {
         return ResponseEntity.ok(usuarioService.findById(Integer.valueOf(jwt.getSubject())));

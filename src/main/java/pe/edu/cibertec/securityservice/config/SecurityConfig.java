@@ -30,7 +30,6 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // El claim "rol" del token (ADMIN / USER) se convierte en ROLE_ADMIN / ROLE_USER
     private JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtGrantedAuthoritiesConverter authorities = new JwtGrantedAuthoritiesConverter();
         authorities.setAuthoritiesClaimName("rol");

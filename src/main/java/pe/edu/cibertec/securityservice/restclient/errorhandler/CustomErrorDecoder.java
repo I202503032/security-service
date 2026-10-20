@@ -17,6 +17,8 @@ public class CustomErrorDecoder implements ErrorDecoder {
                     HttpStatus.BAD_REQUEST, "Solicitud Incorrecta");
             case UNAUTHORIZED, FORBIDDEN -> new ResponseStatusException(
                     status, "Sin permiso en el servicio remoto");
+            case SERVICE_UNAVAILABLE -> new ResponseStatusException(
+                    HttpStatus.SERVICE_UNAVAILABLE, "Servicio remoto no disponible");
             default -> new ResponseStatusException(
                     HttpStatus.BAD_GATEWAY, "Error en el servicio remoto " + status);
         };

@@ -9,7 +9,7 @@ import pe.edu.cibertec.securityservice.restclient.movement.model.OrdenResponse;
 import java.util.List;
 
 @FeignClient(name = "movement-service",
-        url = "${movement.service.url}",
+        url = "${movement.service.url:}",
         configuration = FeignConfig.class
 )
 public interface MovementClient {

@@ -12,7 +12,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Configuration
 public class FeignInterceptorConfig {
 
-    // Reenvía el JWT de la petición actual al otro microservicio
     @Bean
     public RequestInterceptor requestInterceptor(){
         return new RequestInterceptor() {

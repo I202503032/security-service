@@ -23,10 +23,8 @@ public class Usuario {
     private String email;
     private String direccion;
     private String telefono;
-    // ADMIN o USER
     @Column(nullable = false)
     private String rol;
-    // encriptado con BCrypt
     @Column(nullable = false)
     private String password;
 }

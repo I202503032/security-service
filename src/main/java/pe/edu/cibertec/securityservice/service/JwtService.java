@@ -21,7 +21,6 @@ public class JwtService {
     @Value("${jwt.expiration-minutes}")
     private long expirationMinutes;
 
-    // Claims acordados con el equipo: sub = id, email, rol
     public String generarToken(Usuario usuario) {
         Instant ahora = Instant.now();
         JwtClaimsSet claims = JwtClaimsSet.builder()

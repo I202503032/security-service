@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import pe.edu.cibertec.securityservice.model.Usuario;
 
-// Lo que ven los demás microservicios (nunca se expone el password)
 @Setter
 @Getter
 public class UsuarioDTO {
